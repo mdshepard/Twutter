@@ -87,5 +87,5 @@ def follow(request, username):
 @login_required
 def stopfollow(request, username):
     user = User.objects.get(username=username)
-    request.user.twutterprofile.follows.delete(user.twutterprofile)
+    request.user.twutterprofile.follows.remove(user.twutterprofile)
     return HttpResponseRedirect('/' + user.username + '/')

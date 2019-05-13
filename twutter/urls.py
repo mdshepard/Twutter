@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from twutterprofile.views import frontpage, signout, profile, follow, follows, followers, stopfollow  # noqa
-from twuut.views import feed
 
 
 urlpatterns = [
