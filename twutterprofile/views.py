@@ -14,7 +14,7 @@ def return_to_top():
 
 @login_required
 def profile(request, username):
-    # User profile view. allows you to view other users' information.
+    # User profile view. allows you to view other users' profile pages.
     user = User.objects.get(username=username)
 
     if request.method == 'POST':
@@ -26,6 +26,7 @@ def profile(request, username):
             twuut.save()
         redirecturl = request.POST.get('redirect', reverse("profile:frontpage"))
         return redirect(redirecturl)
+
     else:
         form = TwuutForm()
     return render(request, 'profile.html', {'form': form, 'user': user})
